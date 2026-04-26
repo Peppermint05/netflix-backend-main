@@ -16,3 +16,24 @@ jobs:
         run: |
           hostnamectl
           
+  build-and-push2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Docker build
+        run: |
+          hostnamectl
+
+  build-and-push3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Docker build
+        run: |
+          hostnamectl

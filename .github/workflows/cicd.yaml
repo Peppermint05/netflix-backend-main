@@ -4,14 +4,15 @@ on:
   push:
     branches: [main]
 
-    jobs:
-      build-and-push:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Check out the repository
-            uses: actions/checkout@v2
-            name: Docker build
-              run: 
-                 hostnamectl
-                 # docker build -t netflixbackend:latest .
-      
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Docker build
+        run: |
+          hostnamectl
+          

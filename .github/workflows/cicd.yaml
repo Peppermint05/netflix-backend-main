@@ -12,7 +12,11 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2
 
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+          ls -al
+
       - name: Docker build
         run: |
-          docker build -t netflix_backend-main:latest .
-          
+          docker build -t netflix-backend-main:latest .

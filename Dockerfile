@@ -1,11 +1,12 @@
 FROM maven:3.9-eclipse-temurin-17 AS build
 
 WORKDIR /app
-
-COPY pom.xml .
+COPY .env /app/src/main/resources/.env
+COPY ./pom.xml /app
 COPY src ./src
+RUN mvn -f /app/pom.xml clean package -DskipTests
+RUN ls -la /app/target
 
-RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jre
 
